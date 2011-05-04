@@ -1,0 +1,94 @@
+.calendarNavigationBar,
+.calendarViewBar {
+	overflow: hidden;
+}
+
+.calendarViewBar ul,
+.typography .calendarViewBar ul {
+	margin: 0;
+}
+
+.calendarNavigationBar div,
+.calendarViewBar ul li {
+	float: left;
+	margin: 10px 2px;
+	padding: 0;
+	list-style: none;
+}
+
+.calendarNavigationBar span,
+.calendarViewBar span {
+	font-weight: bold;
+}
+
+.calendarNavigationBar a,
+.calendarNavigationBar span,
+.calendarViewBar a,
+.calendarViewBar span,
+p.monthTitle a,
+p.monthTitle span {
+	background: #FFFFFF none repeat scroll 0% 50%;
+	border: 1px solid #DDDDDD;
+	padding: 2px 6px;
+	text-decoration: none;
+}
+
+.calendarNavigationBar a:hover,
+.calendarViewBar a:hover,
+p.monthTitle a:hover {
+	text-decoration: none;
+}
+
+p.monthTitle,
+.typography p.monthTitle {
+	text-align: center;
+	margin: 18px 0 5px;
+}
+
+.calendar table,
+.typography .calendar table {
+	margin: 0 auto;
+}
+
+.calendar table a {
+	padding: 2px;
+}
+
+.calendar th {
+	width: 70px;
+	text-align: center;
+	padding: 0 0 2px 0;
+}
+
+.calendar .timeTitle {
+	width: inherit;
+}
+
+.calendar .dayTitle {
+	width: inherit;
+	padding: 0 6px 2px;
+}
+
+.calendar td {
+	text-align: center;
+}
+
+td.prevmonth,
+td.nextmonth {
+	background: #DDD;
+}
+
+td.today p,
+td.today p a {
+	font-weight: bold;
+	color: #000;
+}
+
+div.weekView td.today,
+div.dayView td.today {
+	background: #DDD;
+}
+
+td.todayNow {
+	background: #000;
+}

@@ -157,6 +157,10 @@ abstract class CalendarAbstractWeekView extends CalendarAbstractView {
 			
 			$dates = $this->WeekDates($daysByDateFormat, $week['week'], $week['yearOfWeek']);
 			
+			if(! $dates) {
+				continue;
+			}
+			
 			foreach($dates as $date) {
 				
 				$day = date('j', $date);
@@ -214,6 +218,7 @@ abstract class CalendarAbstractWeekView extends CalendarAbstractView {
 		$firstDate = $this->getWeekStartDay($week, $year);
 		
 		$beforeMonday = true;
+		$validWeek = false;
 		
 		foreach($days as $day) {
 			$date = $firstDate;
@@ -226,10 +231,16 @@ abstract class CalendarAbstractWeekView extends CalendarAbstractView {
 				$date = mktime( 0, 0, 0, date('n', $date), date('j', $date) + ($beforeMonday ? -1 : 1), date('Y', $date));
 			}
 			
+			if(date('W', $date) == $week) {
+				$validWeek = true;
+			}
+			
 			$dates[] = $date;
 		}
 		
-		return $dates;
+		if($validWeek) {
+			return $dates;
+		}
 	}
 	
 	private function DaysByDateFormat() {

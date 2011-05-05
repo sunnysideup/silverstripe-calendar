@@ -56,6 +56,7 @@ abstract class CalendarAbstractWeekView extends CalendarAbstractView {
 	function startByFriday() {$this->dayStart = 5;}
 	function startBySaturday() {$this->dayStart = 6;}
 	function startBySunday() {$this->dayStart = 7;}
+	function getDayStart() {return $this->dayStart;}
 	
 	function removeMonday() {$this->removeDay(1);}
 	function removeTuesday() {$this->removeDay(2);}
@@ -155,7 +156,7 @@ abstract class CalendarAbstractWeekView extends CalendarAbstractView {
 			$days = array();
 			
 			$dates = $this->WeekDates($daysByDateFormat, $week['week'], $week['yearOfWeek']);
-						
+			
 			foreach($dates as $date) {
 				
 				$day = date('j', $date);

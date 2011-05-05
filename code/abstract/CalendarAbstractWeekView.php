@@ -231,7 +231,7 @@ abstract class CalendarAbstractWeekView extends CalendarAbstractView {
 				$date = mktime(0, 0, 0, date('n', $date), date('j', $date) + ($beforeMonday ? -1 : 1), date('Y', $date));
 			}
 			
-			if(date('N', $date) >= $this->dayStart && date('W', $date) == $week) {
+			if(/*date('N', $date) >= $this->dayStart && */date('W', $date) == $week) {
 				$validWeek = true;
 			}
 			

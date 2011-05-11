@@ -56,7 +56,6 @@ abstract class CalendarAbstractWeekView extends CalendarAbstractView {
 	function startByFriday() {$this->dayStart = 5;}
 	function startBySaturday() {$this->dayStart = 6;}
 	function startBySunday() {$this->dayStart = 7;}
-	function getDayStart() {return $this->dayStart;}
 	
 	function removeMonday() {$this->removeDay(1);}
 	function removeTuesday() {$this->removeDay(2);}
@@ -246,7 +245,7 @@ abstract class CalendarAbstractWeekView extends CalendarAbstractView {
 		return $days;
 	}
 	
-	protected function getWeekStartDay($week, $year) {
+	protected function getWeekStartDay($week, $year, $fromStartDay = false) {
 		
 		// 1) Research of the week
 		
@@ -260,9 +259,11 @@ abstract class CalendarAbstractWeekView extends CalendarAbstractView {
 		
 		// 2) Research of the first day of the week
 		
-		while(date('N', $firstDate) > 1) { // It means that the 1st day of this week is not Monday
-			$firstDate = mktime(0, 0, 0, date('n', $firstDate), date('j', $firstDate) - 1, date('Y', $firstDate));
+		$diff = date('N', $firstDate) - 1;
+		if($fromStartDay && $this->dayStart != 1) {
+			$diff += 8 - $this->dayStart;
 		}
+		$firstDate = mktime(0, 0, 0, date('n', $firstDate), date('j', $firstDate) - $diff, date('Y', $firstDate));
 		
 		return $firstDate;
 	}

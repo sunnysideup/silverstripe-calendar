@@ -93,16 +93,20 @@ class CalendarMonthView extends CalendarAbstractWeekView {
 			$firstDateWeekYear--;
 		}
 			
-		$weekFirstDate = $this->getWeekStartDay($firstDateWeek, $firstDateWeekYear);
+		$weekFirstDate = $this->getWeekStartDay($firstDateWeek, $firstDateWeekYear, true);
+		$nextWeekFirstDate = mktime(0, 0, 0, date('n', $weekFirstDate), date('j', $weekFirstDate) + 7, date('Y', $weekFirstDate));
 		
-		$dayStart = $this->getDayStart();
-		if($dayStart != 1 && date('N', $firstDate) >= $dayStart) {
-			$weekFirstDate = mktime(0, 0, 0, date('n', $weekFirstDate), date('j', $weekFirstDate) + 7, date('Y', $weekFirstDate));
+		if(date('j', $nextWeekFirstDate) == 1) {
+			$weekFirstDate = $nextWeekFirstDate;
 		}
 		
 		while(date('Y', $weekFirstDate) < $year || (date('Y', $weekFirstDate) == $year && date('n', $weekFirstDate) <= $month)) {
-			$week = date('W', $weekFirstDate);
-			$yearOfWeek = date('Y', $weekFirstDate);
+			$weekMonday = $weekFirstDate;
+			while(date('N', $weekMonday) != 1) {
+				$weekMonday = mktime(0, 0, 0, date('n', $weekMonday), date('j', $weekMonday) + 1, date('Y', $weekMonday));
+			}
+			$week = date('W', $weekMonday);
+			$yearOfWeek = date('Y', $weekMonday);
 			if($month == 1) {
 				if($week == 1 && $yearOfWeek == $year - 1) {
 					$yearOfWeek++;

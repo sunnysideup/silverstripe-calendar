@@ -309,7 +309,7 @@ class Calendar extends ViewableData {
 			$link = $this->Link($this->controller, $view, $params);
 			$views[] = new ArrayData(array('Title' => $title, 'Link' => $link, 'Current' => $view->getName() == $this->view->getName()));
 		}
-		return new DataObjectSet($views);
+		return new ArrayList($views);
 	}
 	
 	function PrevLink() {

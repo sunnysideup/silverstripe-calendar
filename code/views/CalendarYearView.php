@@ -34,7 +34,7 @@ class CalendarYearView extends CalendarMonthView {
 			$calendars[] = $this->YearCalendar($year, $calendar);
 		}
 		
-		return new DataObjectSet($calendars);
+		return new ArrayList($calendars);
 	}
 	
 	function prevLinkParams(Calendar $calendar) {
@@ -158,7 +158,7 @@ class CalendarYearView extends CalendarMonthView {
 			$periods[] = $period;
 		}
 		
-		$calendar['Months'] = new DataObjectSet($periods);
+		$calendar['Months'] = new ArrayList($periods);
 		
 		return new ArrayData($calendar);
 	}

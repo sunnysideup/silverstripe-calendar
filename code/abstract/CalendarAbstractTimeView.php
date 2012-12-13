@@ -38,7 +38,7 @@ abstract class CalendarAbstractTimeView extends CalendarAbstractView {
 			$calendars[] = $this->Calendar($datesGroup, $calendar);
 		}
 		
-		return new DataObjectSet($calendars);
+		return new ArrayList($calendars);
 	}
 	
 	function viewLinkParamsAndTitle(Calendar $calendar) {
@@ -139,7 +139,7 @@ abstract class CalendarAbstractTimeView extends CalendarAbstractView {
 			$days[] = new ArrayData(array('DayTitleClass' => $dayTitleClass, 'DayTitle' => $dayTitle));
 		}
 		
-		$calendar['Days'] = new DataObjectSet($days);
+		$calendar['Days'] = new ArrayList($days);
 		
 		// 3) Periods Values
 		
@@ -194,12 +194,12 @@ abstract class CalendarAbstractTimeView extends CalendarAbstractView {
 				$days[] = new ArrayData($subPeriodParams);
 			}
 			
-			$period['Days'] = new DataObjectSet($days);
+			$period['Days'] = new ArrayList($days);
 			
 			$periods[] = new ArrayData($period);
 		}
 				
-		$calendar['Periods'] = new DataObjectSet($periods);
+		$calendar['Periods'] = new ArrayList($periods);
 		
 		return new ArrayData($calendar);
 	}

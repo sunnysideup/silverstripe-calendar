@@ -44,7 +44,7 @@ abstract class CalendarAbstractWeekView extends CalendarAbstractView {
 			$calendars[] = $this->Calendar($weeksGroup, $values, $calendar);
 		}
 		
-		return new DataObjectSet($calendars);
+		return new ArrayList($calendars);
 	}
 	
 	// Functions
@@ -122,7 +122,7 @@ abstract class CalendarAbstractWeekView extends CalendarAbstractView {
 			$days[] = new ArrayData(array('DayTitleClass' => $dayTitleClass, 'DayTitle' => $dayTitle)); 
 		}
 		
-		$calendar['Days'] = new DataObjectSet($days);
+		$calendar['Days'] = new ArrayList($days);
 		
 		// 3) Weeks Values
 				
@@ -199,12 +199,12 @@ abstract class CalendarAbstractWeekView extends CalendarAbstractView {
 				$days[] = new ArrayData($dateParams);
 			}
 			
-			$period['Days'] = new DataObjectSet($days);
+			$period['Days'] = new ArrayList($days);
 			
 			$periods[] = new ArrayData($period);
 		}
 				
-		$calendar['Weeks'] = new DataObjectSet($periods);
+		$calendar['Weeks'] = new ArrayList($periods);
 		
 		return new ArrayData($calendar);
 	}

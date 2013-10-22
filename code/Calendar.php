@@ -1,50 +1,50 @@
 <?php
 
 class Calendar extends ViewableData {
-	
+
 	// Static
-	
+
 	private static $names = array();
-	
+
 	static $session_calendars = 'Calendars';
-	
+
 	// Attributes
-		
+
 	protected $controller;
-	
+
 	protected $name;
-	
+
 	protected $initDone = false;
-	
+
 	protected $views = array();
-	
+
 	protected $view;
-	
+
 	protected $year;
 	protected $month;
 	protected $day;
-	
+
 	protected $defaultView;
 	protected $defaultYear;
 	protected $defaultMonth;
 	protected $defaultDay;
-	
+
 	protected $sessionMode = false;
-	
+
 	protected $navigationBarTemplate;
 	protected $viewBarTemplate;
-	
+
 	// Constructor
-	
-	function __construct($controller, $name, $views = null) {		
+
+	function __construct($controller, $name, $views = null) {
 		parent::__construct();
-		
+
 		// 1) Controller Setting
-		
+
 		$this->controller = $controller;
-		
+
 		// 2) Name Setting
-		
+
 		if(is_string($name)) {
 			if(! in_array($name, self::$names)) {
 				$this->name = $name;
@@ -57,25 +57,25 @@ class Calendar extends ViewableData {
 		else {
 			user_error('Calendar::__construct() : you cannot set the $name attribute with a non string value', E_USER_ERROR);
 		}
-		
+
 		// 3) Views Setting
-		
+
 		if($views != null) {
 			$this->addViews($views);
 		}
 	}
-	
+
 	function initValues() {
 		if($this->initDone) return;
-		
+
 		$sessionName = self::$session_calendars . ".$this->name";
 		$sessionValues = Session::get($sessionName);
 		if($sessionValues) {
 			$sessionValues = unserialize($sessionValues);
 		}
-		
+
 		// 1) View Setting
-		
+
 		$views = array();
 		if(isset($_REQUEST[$this->name]['view'])) {
 			$views[] = $_REQUEST[$this->name]['view'];
@@ -101,9 +101,9 @@ class Calendar extends ViewableData {
 				return;
 			}
 		}
-		
+
 		// 2) Year Setting
-		
+
 		$years = array();
 		if(isset($_REQUEST[$this->name]['year'])) {
 			$years[] = $_REQUEST[$this->name]['year'];
@@ -123,9 +123,9 @@ class Calendar extends ViewableData {
 		if(! $this->year) {
 			$this->year = date('Y');
 		}
-		
+
 		// 3) Month Setting
-		
+
 		if($this->view->needsMonth()) {
 			$months = array();
 			if(isset($_REQUEST[$this->name]['month'])) {
@@ -157,9 +157,9 @@ class Calendar extends ViewableData {
 				$this->month = date('n');
 			}
 		}
-		
+
 		// 4) Day Setting
-		
+
 		if($this->view->needsDay()) {
 			if(isset($_REQUEST[$this->name]['day'])) {
 				$days[] = $_REQUEST[$this->name]['day'];
@@ -207,11 +207,11 @@ class Calendar extends ViewableData {
 				}
 			}
 		}
-		
+
 		$this->initDone = true;
-		
+
 		// Session Mode
-		
+
 		if($this->sessionMode) {
 			list($sessionValues, $title) = $this->view->viewLinkParamsAndTitle($this);
 			$sessionValues = array_merge(array('view' => $this->view->getName()), $sessionValues);
@@ -221,14 +221,15 @@ class Calendar extends ViewableData {
 		else {
 			Session::clear($sessionName);
 		}
-		
+
 		// Css Requirements
-		
+		Requirements::javascript(SAPPHIRE_DIR .'/thirdparty/jquery/jquery.js');
+		Requirements::javascript('calendar/javascript/Calendar.js');
 		Requirements::themedCSS('calendar');
 	}
-	
+
 	// Field Functions
-	
+
 	function addViews($views) {
 		if(! is_array($views)) {
 			$views = array($views);
@@ -244,7 +245,7 @@ class Calendar extends ViewableData {
 			}
 		}
 	}
-	
+
 	private function getView($viewName) {
 		foreach($this->views as $view) {
 			if($view->getName() == $viewName) {
@@ -252,7 +253,7 @@ class Calendar extends ViewableData {
 			}
 		}
 	}
-	
+
 	function removeViews($views) {
 		if(! is_array($views)) {
 			$views = array($views);
@@ -269,23 +270,24 @@ class Calendar extends ViewableData {
 			}
 		}
 	}
-	
+
 	function forTemplate() {
 		$this->initValues();
 		if($this->view) return $this->view->showCalendar($this);
 	}
-	
+
 	function NavigationBar() {
 		if($this->navigationBarTemplate) $templates[] = $this->navigationBarTemplate;
 		$templates[] = 'CalendarNavigationBar';
 		return $this->renderWith($templates);
 	}
+
 	function ViewBar() {
 		if($this->viewBarTemplate) $templates[] = $this->viewBarTemplate;
 		$templates[] = 'CalendarViewBar';
 		return $this->renderWith($templates);
 	}
-	
+
 	function ID() {
 		return "{$this->class}_{$this->name}";
 	}
@@ -295,13 +297,13 @@ class Calendar extends ViewableData {
 	function ViewBarID() {
 		return "{$this->ID()}_ViewBar";
 	}
-	
+
 	function ViewTitle() {return $this->view->title();}
 	function ViewDateTitle() {
 		$this->initValues();
 		return $this->view->DateTitle($this);
 	}
-	
+
 	function Views() {
 		$this->initValues();
 		foreach($this->views as $view) {
@@ -311,19 +313,19 @@ class Calendar extends ViewableData {
 		}
 		return new ArrayList($views);
 	}
-	
+
 	function PrevLink() {
 		$this->initValues();
 		$params = $this->view->prevLinkParams($this);
 		return $this->Link($this->controller, $this->view, $params);
 	}
-	
+
 	function NextLink() {
 		$this->initValues();
 		$params = $this->view->nextLinkParams($this);
 		return $this->Link($this->controller, $this->view, $params);
 	}
-	
+
 	function Link($controller, CalendarAbstractView $view, array $params) {
 		$link = is_string($controller) ? $controller : $controller->URLSegment;
 		$params = array_merge(array('view' => $view->getName()), $params);
@@ -332,21 +334,21 @@ class Calendar extends ViewableData {
 		}
 		return $link;
 	}
-	
+
 	function getController() {return $this->controller;}
 	function getYear() {return $this->year;}
 	function getMonth() {return $this->month;}
 	function getDay() {return $this->day;}
-	
+
 	function setDefaultView($view) {$this->defaultView = $view;}
 	function setDefaultYear($year) {$this->defaultYear = $year;}
 	function setDefaultMonth($month) {$this->defaultMonth = $month;}
 	function setDefaultDay($day) {$this->defaultDay = $day;}
-	
+
 	function setSessionMode($value) {$this->sessionMode = $value;}
-	
+
 	function setNavigationBarTemplate($template) {$this->navigationBarTemplate = $template;}
 	function setViewBarTemplate($template) {$this->viewBarTemplate = $template;}
 }
 
-?>
+

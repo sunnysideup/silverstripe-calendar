@@ -102,8 +102,10 @@ abstract class CalendarAbstractView extends ViewableData {
 	function showCalendar(Calendar $calendar) {
 		$calendars = $this->Calendars($calendar);
 		$templates = $this->getTemplates();
+
 		return $this->customise(array('ID' => $calendar->ID(), 'ContainerClass' => $this->containerClass, 'Calendars' => $calendars))->renderWith($templates);
 	}
-}
 
+
+}
 

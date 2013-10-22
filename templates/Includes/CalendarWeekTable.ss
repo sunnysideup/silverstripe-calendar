@@ -7,7 +7,7 @@
 				</th>
 			<% end_if %>
 			<% loop Days %>
-				<th class="dayTitle $DayTitleClass" scope="col">
+				<th class="dayTitle $DayTitleClass">
 					$DayTitle
 				</th>
 			<% end_loop %>

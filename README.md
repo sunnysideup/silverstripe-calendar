@@ -8,7 +8,7 @@ Romain Louis <romalouis@gmail.com>
 
 Requirements
 -----------------------------------------------
-SilverStripe 3.0.0 or greater.
+SilverStripe 3.1 or greater.
 
 Documentation
 -----------------------------------------------

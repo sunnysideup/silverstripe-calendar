@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<source xmlns="http://xml.phpdox.net/src">
+  <dir name="/var/www/_modules/calendar/trunk">
+    <file name="_config.php" size="7" time="2015-03-14T10:23:55+13:00" unixtime="1426281835" sha1="570c9f99fe96c66a06665644731ef8cfa2428510" xml="tokens/_config.php.xml"/>
+    <dir name="code">
+      <dir name="time">
+        <file name="CalendarTimePeriod.php" size="904" time="2015-03-14T10:23:55+13:00" unixtime="1426281835" sha1="af8401eca3e6e6d37eacedef454edc9994c6d7fc" xml="tokens/code/time/CalendarTimePeriod.php.xml"/>
+        <file name="CalendarTime.php" size="2594" time="2015-03-14T10:23:55+13:00" unixtime="1426281835" sha1="14b497db6d66a93773aa3134a1f52337385a67dc" xml="tokens/code/time/CalendarTime.php.xml"/>
+      </dir>
+      <dir name="abstract">
+        <file name="CalendarAbstractView.php" size="2979" time="2015-03-14T10:23:55+13:00" unixtime="1426281835" sha1="c8cd8fae1ae6e19125fe639a7da2b0904ecf3107" xml="tokens/code/abstract/CalendarAbstractView.php.xml"/>
+        <file name="CalendarAbstractTimeView.php" size="6794" time="2015-03-14T10:23:55+13:00" unixtime="1426281835" sha1="7f4ee181355b0aec2ed6ca579852bc2bedb89d88" xml="tokens/code/abstract/CalendarAbstractTimeView.php.xml"/>
+        <file name="CalendarAbstractWeekView.php" size="8794" time="2015-03-14T10:23:55+13:00" unixtime="1426281835" sha1="125cf59ea17115296e1724ad042a40692616efc9" xml="tokens/code/abstract/CalendarAbstractWeekView.php.xml"/>
+      </dir>
+      <file name="Calendar.php" size="9259" time="2015-03-14T10:23:55+13:00" unixtime="1426281835" sha1="681feafd98aa63639001dab03d83755de6ca1215" xml="tokens/code/Calendar.php.xml"/>
+      <dir name="views">
+        <file name="CalendarWeekView.php" size="4141" time="2015-03-14T10:23:55+13:00" unixtime="1426281835" sha1="7f5547ee04078fba3f4b87896eeb89e80fc959b2" xml="tokens/code/views/CalendarWeekView.php.xml"/>
+        <file name="CalendarYearView.php" size="5853" time="2015-03-14T10:23:55+13:00" unixtime="1426281835" sha1="bc5bf49b4715be5921058e2603211e53e0d8915f" xml="tokens/code/views/CalendarYearView.php.xml"/>
+        <file name="CalendarMonthView.php" size="4189" time="2015-03-14T10:23:55+13:00" unixtime="1426281835" sha1="3a3ae184a3e78d030d7e5b9b7759818948241411" xml="tokens/code/views/CalendarMonthView.php.xml"/>
+        <file name="CalendarDayView.php" size="1578" time="2015-03-14T10:23:55+13:00" unixtime="1426281835" sha1="8c924fd4d11ca4c908a2208c3f4bb2ea9dd6b5a4" xml="tokens/code/views/CalendarDayView.php.xml"/>
+      </dir>
+    </dir>
+  </dir>
+</source>

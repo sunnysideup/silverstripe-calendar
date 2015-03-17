@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Calendar" namespace="" name="Calendar" abstract="false" final="false" start="3" end="352">
+  <file path="/var/www/_modules/calendar/trunk/docs/en/phpdox/../../../code" file="Calendar.php" realpath="/var/www/_modules/calendar/trunk/code/Calendar.php" size="9259" time="2015-03-14T10:23:55+13:00" unixtime="1426281835" sha1="681feafd98aa63639001dab03d83755de6ca1215" relative="code/Calendar.php"/>
+  <extends full="ViewableData" namespace="" name="ViewableData"/>
+  <member name="names" type="array" visibility="private" line="7"/>
+  <member name="session_calendars" type="string" default="'Calendars'" visibility="public" line="9"/>
+  <member name="controller" type="{unknown}" visibility="protected" line="13"/>
+  <member name="name" type="{unknown}" visibility="protected" line="15"/>
+  <member name="initDone" type="{unknown}" default="false" visibility="protected" line="17"/>
+  <member name="views" type="array" visibility="protected" line="19"/>
+  <member name="view" type="{unknown}" visibility="protected" line="21"/>
+  <member name="year" type="{unknown}" visibility="protected" line="23"/>
+  <member name="month" type="{unknown}" visibility="protected" line="24"/>
+  <member name="day" type="{unknown}" visibility="protected" line="25"/>
+  <member name="defaultView" type="{unknown}" visibility="protected" line="27"/>
+  <member name="defaultYear" type="{unknown}" visibility="protected" line="28"/>
+  <member name="defaultMonth" type="{unknown}" visibility="protected" line="29"/>
+  <member name="defaultDay" type="{unknown}" visibility="protected" line="30"/>
+  <member name="sessionMode" type="{unknown}" default="false" visibility="protected" line="32"/>
+  <member name="navigationBarTemplate" type="{unknown}" visibility="protected" line="34"/>
+  <member name="viewBarTemplate" type="{unknown}" visibility="protected" line="35"/>
+  <constructor name="__construct" start="39" end="66" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="controller" byreference="false" type="{unknown}"/>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="views" byreference="false" type="{unknown}" default="null"/>
+    <inline>
+      <comment value="1) Controller Setting" line="42"/>
+      <comment value="2) Name Setting" line="46"/>
+      <comment value="3) Views Setting" line="61"/>
+    </inline>
+  </constructor>
+  <method name="initValues" start="68" end="229" abstract="false" final="false" static="false" visibility="public">
+    <inline>
+      <comment value="1) View Setting" line="77"/>
+      <comment value="2) Year Setting" line="105"/>
+      <comment value="3) Month Setting" line="127"/>
+      <comment value="4) Day Setting" line="161"/>
+      <comment value="Session Mode" line="213"/>
+      <comment value="Css Requirements" line="225"/>
+    </inline>
+  </method>
+  <method name="addViews" start="233" end="247" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="views" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getView" start="249" end="255" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="viewName" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="removeViews" start="257" end="272" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="views" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="forTemplate" start="274" end="277" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="NavigationBar" start="279" end="283" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="ViewBar" start="285" end="289" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="ID" start="291" end="293" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="NavigationBarID" start="294" end="296" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="ViewBarID" start="297" end="299" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="ViewTitle" start="301" end="301" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="ViewDateTitle" start="302" end="305" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="Views" start="307" end="315" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="PrevLink" start="317" end="321" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="NextLink" start="323" end="327" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="Link" start="329" end="336" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="controller" byreference="false" type="{unknown}"/>
+    <parameter name="view" byreference="false" type="object">
+      <type full="\\CalendarAbstractView" namespace="\" name="CalendarAbstractView"/>
+    </parameter>
+    <parameter name="params" byreference="false" type="array"/>
+  </method>
+  <method name="getController" start="338" end="338" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getYear" start="339" end="339" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getMonth" start="340" end="340" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getDay" start="341" end="341" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="setDefaultView" start="343" end="343" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="view" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setDefaultYear" start="344" end="344" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="year" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setDefaultMonth" start="345" end="345" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="month" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setDefaultDay" start="346" end="346" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="day" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setSessionMode" start="348" end="348" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setNavigationBarTemplate" start="350" end="350" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="template" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setViewBarTemplate" start="351" end="351" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="template" byreference="false" type="{unknown}"/>
+  </method>
+</class>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="CalendarWeekView" namespace="" name="CalendarWeekView" abstract="false" final="false" start="3" end="125">
+  <file path="/var/www/_modules/calendar/trunk/docs/en/phpdox/../../../code/views" file="CalendarWeekView.php" realpath="/var/www/_modules/calendar/trunk/code/views/CalendarWeekView.php" size="4141" time="2015-03-14T10:23:55+13:00" unixtime="1426281835" sha1="7f5547ee04078fba3f4b87896eeb89e80fc959b2" relative="code/views/CalendarWeekView.php"/>
+  <extends full="CalendarAbstractTimeView" namespace="" name="CalendarAbstractTimeView"/>
+  <member name="dayStart" type="integer" default="1" visibility="private" line="7"/>
+  <member name="daysRemoved" type="array" visibility="private" line="8"/>
+  <method name="init" start="12" end="17" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="prevLinkParams" start="19" end="26" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="calendar" byreference="false" type="object">
+      <type full="\\Calendar" namespace="\" name="Calendar"/>
+    </parameter>
+  </method>
+  <method name="nextLinkParams" start="28" end="35" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="calendar" byreference="false" type="object">
+      <type full="\\Calendar" namespace="\" name="Calendar"/>
+    </parameter>
+  </method>
+  <method name="title" start="37" end="37" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="Dates" start="39" end="69" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="calendar" byreference="false" type="object">
+      <type full="\\Calendar" namespace="\" name="Calendar"/>
+    </parameter>
+  </method>
+  <method name="getCustomisedTitle" start="71" end="82" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="day" byreference="false" type="{unknown}"/>
+    <parameter name="month" byreference="false" type="{unknown}"/>
+    <parameter name="year" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="startByMonday" start="86" end="86" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="startByTuesday" start="87" end="87" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="startByWednesday" start="88" end="88" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="startByThursday" start="89" end="89" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="startByFriday" start="90" end="90" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="startBySaturday" start="91" end="91" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="startBySunday" start="92" end="92" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="removeMonday" start="94" end="94" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="removeTuesday" start="95" end="95" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="removeWednesday" start="96" end="96" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="removeThursday" start="97" end="97" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="removeFriday" start="98" end="98" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="removeSaturday" start="99" end="99" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="removeSunday" start="100" end="100" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getWeekStartDay" start="104" end="112" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="day" byreference="false" type="{unknown}"/>
+    <parameter name="month" byreference="false" type="{unknown}"/>
+    <parameter name="year" byreference="false" type="{unknown}"/>
+    <inline>
+      <comment value="It means that the 1st day of this week is not Monday" line="107"/>
+    </inline>
+  </method>
+  <method name="getWeekEndDay" start="114" end="118" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="day" byreference="false" type="{unknown}"/>
+    <parameter name="month" byreference="false" type="{unknown}"/>
+    <parameter name="year" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="removeDay" start="120" end="124" abstract="false" final="false" static="false" visibility="private">
+    <parameter name="day" byreference="false" type="{unknown}"/>
+  </method>
+  <parent full="CalendarAbstractTimeView" namespace="" name="CalendarAbstractTimeView">
+    <extends full="CalendarAbstractView" namespace="" name="CalendarAbstractView"/>
+    <member name="timeTitle" type="{unknown}" visibility="protected" line="11"/>
+    <member name="dayTitleClass" type="{unknown}" visibility="protected" line="12"/>
+    <member name="dayTitle" type="{unknown}" visibility="protected" line="13"/>
+    <member name="timeClass" type="{unknown}" visibility="protected" line="14"/>
+    <member name="time" type="{unknown}" visibility="protected" line="15"/>
+    <member name="dayClass" type="{unknown}" visibility="protected" line="16"/>
+    <method name="init" start="20" end="29" abstract="false" final="false" static="false" visibility="public"/>
+    <method name="needsMonth" start="31" end="31" abstract="false" final="false" static="false" visibility="public"/>
+    <method name="needsDay" start="32" end="32" abstract="false" final="false" static="false" visibility="public"/>
+    <method name="Calendars" start="34" end="42" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="calendar" byreference="false" type="object">
+        <type full="\\Calendar" namespace="\" name="Calendar"/>
+      </parameter>
+    </method>
+    <method name="viewLinkParamsAndTitle" start="44" end="54" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="calendar" byreference="false" type="object">
+        <type full="\\Calendar" namespace="\" name="Calendar"/>
+      </parameter>
+    </method>
+    <method name="getLinkParams" start="56" end="62" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="date" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="DateTitle" start="64" end="66" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="calendar" byreference="false" type="object">
+        <type full="\\Calendar" namespace="\" name="Calendar"/>
+      </parameter>
+    </method>
+    <method name="setTimePeriod" start="70" end="70" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="timePeriod" byreference="false" type="object">
+        <type full="\\CalendarTimePeriod" namespace="\" name="CalendarTimePeriod"/>
+      </parameter>
+    </method>
+    <method name="setSubPeriodsLength" start="71" end="71" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="subPeriodsLength" byreference="false" type="object">
+        <type full="\\CalendarTime" namespace="\" name="CalendarTime"/>
+      </parameter>
+    </method>
+    <method name="removeSubPeriods" start="73" end="85" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="subPeriods" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getSubPeriods" start="87" end="98" abstract="false" final="false" static="false" visibility="public"/>
+    <method name="setTimeTitle" start="100" end="100" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="timeTitle" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setDayTitleClass" start="101" end="101" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="dayTitleClass" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setDayTitle" start="102" end="102" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="dayTitle" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setTimeClass" start="103" end="103" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="timeClass" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setTime" start="104" end="104" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="time" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setDayClass" start="105" end="105" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="dayClass" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="Dates" start="121" end="121" abstract="true" final="false" static="false" visibility="public">
+      <parameter name="calendar" byreference="false" type="object">
+        <type full="\\Calendar" namespace="\" name="Calendar"/>
+      </parameter>
+    </method>
+    <method name="getCustomisedTitle" start="123" end="123" abstract="true" final="false" static="false" visibility="public">
+      <parameter name="day" byreference="false" type="{unknown}"/>
+      <parameter name="month" byreference="false" type="{unknown}"/>
+      <parameter name="year" byreference="false" type="{unknown}"/>
+    </method>
+  </parent>
+  <parent full="CalendarAbstractView" namespace="" name="CalendarAbstractView">
+    <extends full="ViewableData" namespace="" name="ViewableData"/>
+    <member name="number" type="{unknown}" visibility="protected" line="12"/>
+    <member name="containerClass" type="{unknown}" visibility="protected" line="14"/>
+    <member name="innerClass" type="{unknown}" visibility="protected" line="15"/>
+    <member name="viewTitle" type="{unknown}" visibility="protected" line="17"/>
+    <member name="template" type="{unknown}" visibility="protected" line="19"/>
+    <member name="viewTitleDelimiter" type="string" default="' - '" visibility="protected" line="20"/>
+    <constructor name="__construct" start="24" end="50" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="name" byreference="false" type="{unknown}"/>
+      <parameter name="number" byreference="false" type="integer" default="1"/>
+    </constructor>
+    <method name="init" start="54" end="54" abstract="true" final="false" static="false" visibility="public"/>
+    <method name="needsMonth" start="56" end="56" abstract="true" final="false" static="false" visibility="public"/>
+    <method name="needsDay" start="57" end="57" abstract="true" final="false" static="false" visibility="public"/>
+    <method name="Calendars" start="59" end="59" abstract="true" final="false" static="false" visibility="public">
+      <parameter name="calendar" byreference="false" type="object">
+        <type full="\\Calendar" namespace="\" name="Calendar"/>
+      </parameter>
+    </method>
+    <method name="prevLinkParams" start="61" end="61" abstract="true" final="false" static="false" visibility="public">
+      <parameter name="calendar" byreference="false" type="object">
+        <type full="\\Calendar" namespace="\" name="Calendar"/>
+      </parameter>
+    </method>
+    <method name="nextLinkParams" start="62" end="62" abstract="true" final="false" static="false" visibility="public">
+      <parameter name="calendar" byreference="false" type="object">
+        <type full="\\Calendar" namespace="\" name="Calendar"/>
+      </parameter>
+    </method>
+    <method name="viewLinkParamsAndTitle" start="64" end="64" abstract="true" final="false" static="false" visibility="public">
+      <parameter name="calendar" byreference="false" type="object">
+        <type full="\\Calendar" namespace="\" name="Calendar"/>
+      </parameter>
+    </method>
+    <method name="getLinkParams" start="66" end="66" abstract="true" final="false" static="false" visibility="public">
+      <parameter name="date" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="title" start="68" end="68" abstract="true" final="false" static="false" visibility="public"/>
+    <method name="DateTitle" start="69" end="69" abstract="true" final="false" static="false" visibility="public">
+      <parameter name="calendar" byreference="false" type="object">
+        <type full="\\Calendar" namespace="\" name="Calendar"/>
+      </parameter>
+    </method>
+    <method name="getName" start="73" end="73" abstract="false" final="false" static="false" visibility="public"/>
+    <method name="setContainerClass" start="75" end="75" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="containerClass" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setInnerClass" start="76" end="76" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="innerClass" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setViewTitle" start="78" end="78" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="viewTitle" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setTemplate" start="82" end="82" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="template" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getTemplates" start="84" end="92" abstract="false" final="false" static="false" visibility="public"/>
+    <method name="setViewTitleDelimiter" start="94" end="94" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="viewTitleDelimiter" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="NameClass" start="96" end="100" abstract="false" final="false" static="false" visibility="public"/>
+    <method name="showCalendar" start="102" end="107" abstract="false" final="false" static="false" visibility="public">
+      <parameter name="calendar" byreference="false" type="object">
+        <type full="\\Calendar" namespace="\" name="Calendar"/>
+      </parameter>
+    </method>
+  </parent>
+</class>

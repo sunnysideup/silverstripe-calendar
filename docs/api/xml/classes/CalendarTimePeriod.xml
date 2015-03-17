@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="CalendarTimePeriod" namespace="" name="CalendarTimePeriod" abstract="false" final="false" start="3" end="34">
+  <file path="/var/www/_modules/calendar/trunk/docs/en/phpdox/../../../code/time" file="CalendarTimePeriod.php" realpath="/var/www/_modules/calendar/trunk/code/time/CalendarTimePeriod.php" size="904" time="2015-03-14T10:23:55+13:00" unixtime="1426281835" sha1="af8401eca3e6e6d37eacedef454edc9994c6d7fc" relative="code/time/CalendarTimePeriod.php"/>
+  <member name="startTime" type="{unknown}" visibility="private" line="7"/>
+  <member name="endTime" type="{unknown}" visibility="private" line="8"/>
+  <constructor name="__construct" start="12" end="14" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="startTime" byreference="false" type="object">
+      <type full="\\CalendarTime" namespace="\" name="CalendarTime"/>
+    </parameter>
+    <parameter name="endTime" byreference="false" type="object">
+      <type full="\\CalendarTime" namespace="\" name="CalendarTime"/>
+    </parameter>
+  </constructor>
+  <method name="setAttributes" start="18" end="26" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="startTime" byreference="false" type="object">
+      <type full="\\CalendarTime" namespace="\" name="CalendarTime"/>
+    </parameter>
+    <parameter name="endTime" byreference="false" type="object">
+      <type full="\\CalendarTime" namespace="\" name="CalendarTime"/>
+    </parameter>
+  </method>
+  <method name="isValidPeriod" start="28" end="30" abstract="false" final="false" static="false" visibility="public">
+    <parameter name="startTime" byreference="false" type="object">
+      <type full="\\CalendarTime" namespace="\" name="CalendarTime"/>
+    </parameter>
+    <parameter name="endTime" byreference="false" type="object">
+      <type full="\\CalendarTime" namespace="\" name="CalendarTime"/>
+    </parameter>
+  </method>
+  <method name="getStartTime" start="32" end="32" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getEndTime" start="33" end="33" abstract="false" final="false" static="false" visibility="public"/>
+</class>

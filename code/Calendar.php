@@ -225,7 +225,7 @@ class Calendar extends ViewableData {
 		// Css Requirements
 		Requirements::javascript(SAPPHIRE_DIR .'/thirdparty/jquery/jquery.js');
 		Requirements::javascript('calendar/javascript/Calendar.js');
-		Requirements::themedCSS('calendar');
+		Requirements::themedCSS('calendar', 'calendar');
 	}
 
 	// Field Functions

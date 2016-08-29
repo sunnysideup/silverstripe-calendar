@@ -1,23 +1,24 @@
 {
-	"name": "sunnysideup/calendar",
-	"type": "silverstripe-module",
-	"description": "basic calendar for silverstripe",
-	"homepage": "http://www.silverstripe-webdevelopment.com",
-	"keywords": ["calendar", "silverstripe"],
-	"license": "Sunny Side Up (BSD-3-Clause and CUSTOM)",
-	"authors":[
-		{
-			"name": "Romain Louis + Nicolaas Francken",
-			"homepage": "https://github.com/sunnysideup",
-			"email" : "modules@sunnysideup.co.nz",
-			"role" : "lead developer"
-		}
-	],
-	"require":{
-		"silverstripe/framework": "~3.1",
-		"silverstripe/cms": "~3.1"
-	},
-	"extra": {
-		"installer-name": "calendar"
-	}
+    "name": "sunnysideup/calendar",
+    "type": "silverstripe-module",
+    "description": "basic calendar for silverstripe",
+    "keywords": [
+        "calendar",
+        "silverstripe"
+    ],
+    "license": "Sunny Side Up (BSD-3-Clause and CUSTOM)",
+    "authors": [
+        {
+            "name": "Romain Louis + Nicolaas Francken",
+            "email": "modules@sunnysideup.co.nz",
+            "role": "lead developer"
+        }
+    ],
+    "require": {
+        "silverstripe/framework": "~3.1",
+        "silverstripe/cms": "~3.1"
+    },
+    "extra": {
+        "installer-name": "calendar"
+    }
 }

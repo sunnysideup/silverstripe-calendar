@@ -3,8 +3,10 @@
     "type": "silverstripe-module",
     "description": "basic calendar for silverstripe",
     "keywords": [
-        "calendar",
-        "silverstripe"
+        "Silverstripe-CMS",
+        "CMS",
+        "Silverstripe",
+        "calendar"
     ],
     "license": "Sunny Side Up (BSD-3-Clause and CUSTOM)",
     "authors": [

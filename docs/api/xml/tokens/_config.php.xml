@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<source xmlns="http://xml.phpdox.net/token">
-  <file xmlns="http://xml.phpdox.net/src" path="/var/www/_modules/calendar/trunk/docs/en/phpdox/../../.." file="_config.php" realpath="/var/www/_modules/calendar/trunk/_config.php" size="7" time="2015-03-14T10:23:55+13:00" unixtime="1426281835" sha1="570c9f99fe96c66a06665644731ef8cfa2428510" relative="_config.php"/>
-  <line no="1">
-    <token name="T_OPEN_TAG">&lt;?php</token>
-  </line>
-  <line no="2"/>
-</source>
